@@ -1,34 +1,46 @@
 # umi-plugin-localtunnel
 
-## 使用
+A plugin for exposing local **umi 3** web application to the world for sharing and testing.
 
-#### 安装
+## Usage
 
-1. 安装插件
+#### Install
+
+1. Install plugin
 
 ```bash
-$ npm install @music/umi-plugin-localtunnel
+$ npm install umi-plugin-localtunnel
 ```
 
-2. umi 会自动识别插件并注册
+2. umi would automatically detect the plugin and register it（No need to explicitly declare inside plugin, or duplicated register error would be throwed）
 
-   （无需在 plugin 中显式声明，不然会报重复注册的 error）
+#### Configuration
 
-#### 运行
+Use key (`localtunnel`) to configure the plugin inside `.umirc.js` file:
 
-程序运行后，终端会打印信息`Tunnel is running on: https://umi-xxxxxx.tunnel.igame.163.com`。点击链接即可使用 tunnel。
+```js
+import { defineConfig } from 'umi';
 
-## FAQ
+export default defineConfig({
+  localtunnel: {
+    host: 'https://localtunnel.me',
+    subdomain: 'my-umi-application',
+  },
+});
+```
 
-Q: 在 cms 开发时使用了该插件，登陆成功跳转回来显示：
+| Key       | Default                | Description                                       |
+| --------- | ---------------------- | ------------------------------------------------- |
+| host      | https://localtunnel.me | URL for the upstream proxy server.                |
+| subdomain | umi-[project idendity] | Request a specific subdomain on the proxy server. |
 
-> # 该网页无法正常运作
->
-> **umi-xxxxxx.tunnel.igame.163.com** 未发送任何数据。
+**NOTE:** Umi-plugin-localtunnel use localtunnel module inside. For more information, refer to its [official document](https://github.com/localtunnel/localtunnel).
 
-A: 这是因为跳转回来的链接是 http 链接，在导航栏的地址前补上`https://`即可正常跳转
+#### Runtime
 
-## 开发
+After first development compile, the localtunnel would be connected. And the following information would be printed to the terminal:  `Tunnel is running on: https://[subdomain].[host]`. Just click the link to use it.
+
+## Plugin Development
 
 ### Install
 
@@ -49,7 +61,10 @@ Configure in `.umirc.js`,
 ```js
 export default {
   plugins: ['path/to/your/local/umi-plugin-localtunnel'],
+  localtunnel: {
+    ...
+  }
 };
 ```
 
-详见：https://umijs.org/docs/plugin
+For more informatiom, refer to [plugin](https://umijs.org/docs/plugin) and [plugin API](https://umijs.org/plugins/api) of umi document.

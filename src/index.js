@@ -46,7 +46,7 @@ async function startTunnel(port, host, subdomain, logger) {
     subdomain: subdomain,
   });
 
-  logger.info(`Tunnel is running on: ${tunnel.url}`);
+  logger.info(`Localtunnel is running on: ${tunnel.url}`);
 
   tunnel.on('close', () => {
     logger.info('Tunnel have closed');

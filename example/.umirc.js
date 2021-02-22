@@ -3,6 +3,6 @@ import { defineConfig } from 'umi';
 export default defineConfig({
   plugins: [require.resolve('../lib')],
   localtunnel: {
-    subdomain: 'dfsadfasdf',
+    subdomain: 'test-subdomain',
   },
 });

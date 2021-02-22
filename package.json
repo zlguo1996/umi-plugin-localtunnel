@@ -1,7 +1,7 @@
 {
   "name": "umi-plugin-localtunnel",
   "main": "lib/index.js",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "description": "A plugin for exposing local umi application to the world",
   "authors": {
     "name": "Guo Zile",
@@ -60,5 +60,9 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "localtunnel": "^2.0.0"
-  }
+  },
+  "keywords": [
+    "umi",
+    "localtunnel"
+  ]
 }

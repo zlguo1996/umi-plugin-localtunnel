@@ -14,7 +14,7 @@ export default function(api) {
     key: KEY,
     config: {
       default: {
-        host: 'https://tunnel.igame.163.com',
+        host: 'https://localtunnel.me',
         subdomain: getSubdomain(),
       },
       schema(joi) {

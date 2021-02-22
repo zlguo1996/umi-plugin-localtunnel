@@ -35,10 +35,10 @@ if (window.g_initWebpackHotDevClient) {
 
     // @ts-ignore
     module.hot.check(true).then(
-      function(updatedModules: any) {
+      function (updatedModules: any) {
         handleApplyUpdates(null, updatedModules);
       },
-      function(err: Error) {
+      function (err: Error) {
         handleApplyUpdates(err, null);
       },
     );
@@ -48,3 +48,4 @@ if (window.g_initWebpackHotDevClient) {
     tryApplyUpdates,
   });
 }
+      

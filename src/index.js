@@ -24,6 +24,7 @@ export default function(api) {
         });
       },
     },
+    enableBy: api.EnableBy.config,
   });
 
   api.onDevCompileDone(({ isFirstCompile }) => {

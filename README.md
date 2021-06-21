@@ -36,6 +36,10 @@ export default defineConfig({
 
 **NOTE:** Umi-plugin-localtunnel use localtunnel module inside. For more information, refer to its [official document](https://github.com/localtunnel/localtunnel).
 
+#### Disable plugin
+
+To disable plugin, just remove `localtunnel` configuration in `.umirc.js`.
+
 #### Runtime
 
 After first development compile, the localtunnel would be connected. And the following information would be printed to the terminal:  `Tunnel is running on: https://[subdomain].[host]`. Just click the link to use it.
@@ -66,5 +70,4 @@ export default {
   }
 };
 ```
-
 For more informatiom, refer to [plugin](https://umijs.org/docs/plugin) and [plugin API](https://umijs.org/plugins/api) of umi document.
